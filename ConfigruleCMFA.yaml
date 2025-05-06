@@ -32,22 +32,22 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-- name: Biznetexp19
-  type: vmess
-  server: 104.17.3.81
-  port: 443
-  uuid: ponselqscun3lqakwo8yx
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  servername: biznet-2.storevpn.cc
-  network: ws
-  ws-opts:
-    path: /vmess
-    headers:
-      Host: biznet-2.storevpn.cc
+  - name: BiznetExp19
+    server: 104.17.3.81
+    port: 443
+    type: vmess
+    uuid: ponselqscun3lqakwo8yx
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: biznet-2.storevpn.cc
+    network: ws
+    ws-opts:
+      path: /vmess
+      headers:
+        Host: biznet-2.storevpn.cc
+    udp: true
 proxy-groups:
   - name: ID-X
     type: fallback
