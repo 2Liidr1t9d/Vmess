@@ -33,7 +33,7 @@ dns:
     - 112.215.203.254
 proxies:
   - name: Biznetexp19
-    server: biznet-2.storevpn.cc
+    server: 104.17.3.81
     port: 443
     type: vmess
     uuid: ponselqscun3lqakwo8yx
