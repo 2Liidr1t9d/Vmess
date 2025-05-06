@@ -48,37 +48,6 @@ proxies:
     path: /vmess
     headers:
       Host: biznet-2.storevpn.cc
-  - name: AKUN2
-    server: quiz.int.vidio.com
-    port: 443
-    type: vless
-    uuid: 9cf9a9b0-2e2e-45bd-ac6f-5eaa44e30cfe
-    cipher: auto
-    tls: true
-    skip-cert-verify: true
-    servername: id1vless.ipservers.xyz
-    network: ws
-    ws-opts:
-      path: /jagoanssh
-      headers:
-        Host: id1vless.ipservers.xyz
-    udp: true
-  - name: AKUN3
-    server: quiz.int.vidio.com
-    port: 443
-    type: vless
-    uuid: aae98731-898a-4cd3-8c7f-d09af2387d63
-    cipher: auto
-    tls: true
-    skip-cert-verify: true
-    servername: id2vless.ipservers.xyz
-    network: ws
-    ws-opts:
-      path: /jagoanssh
-      headers:
-        Host: id2vless.ipservers.xyz
-    udp: true
-
 proxy-groups:
   - name: ID-X
     type: fallback
