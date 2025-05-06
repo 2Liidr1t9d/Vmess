@@ -61,7 +61,6 @@ proxy-groups:
     interval: 300
     proxies:
       - Biznetexp19
-      
   - name: IKLAN
     type: select
     proxies:
