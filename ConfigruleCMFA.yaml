@@ -71,7 +71,7 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - AKUN1
+      - BiznetExp19
       - AKUN2
       - AKUN3
 
@@ -80,7 +80,7 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - AKUN1
+      - SGGSexp29
       - AKUN2
       - AKUN3
       
