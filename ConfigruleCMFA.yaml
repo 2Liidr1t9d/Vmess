@@ -33,8 +33,8 @@ dns:
     - 112.215.203.254
 proxies:
   - name: Biznetexp19
-    server: quiz.int.vidio.com
-    port: 80
+    server: 104.17.3.81
+    port: 443
     type: vmess
     uuid: ponselqscun3lqakwo8yx
     alterId: 0
