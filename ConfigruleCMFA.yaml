@@ -1,3 +1,4 @@
+# Konfigurasi Proxy
 port: 7890
 socks-port: 7891
 redir-port: 7892
@@ -11,10 +12,8 @@ external-controller: 0.0.0.0:9090
 secret: ""
 bind-address: "*"
 unified-delay: true
-
 profile:
   store-selected: true
-
 dns:
   enable: true
   ipv6: false
@@ -34,6 +33,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 
+# Proxy
 proxies:
   - name: Biznetexp19
     server: 104.17.3.81
@@ -51,7 +51,6 @@ proxies:
       headers:
         Host: biznet-2.storevpn.cc
     udp: true
-
   - name: SGGSEXP29
     server: 104.17.3.81
     port: 443
@@ -69,17 +68,18 @@ proxies:
         Host: sggs-1.storevpn.cc
     udp: true
 
+# Proxy Groups
 proxy-groups:
   - name: ID-X
-    type: fallback
-    url: http://www.gstatic.com/generate_204
-    interval: 300
+    type: select
     proxies:
       - Biznetexp19
       - SGGSEXP29
 
   - name: MIX-X
-    type: select
+    type: fallback
+    url: http://www.gstatic.com/generate_204
+    interval: 300
     proxies:
       - Biznetexp19
       - SGGSEXP29
@@ -93,11 +93,11 @@ proxy-groups:
   - name: GAME
     type: select
     proxies:
-      - Biznetexp19
-      - SGGSEXP29
+      - ID-X
       - DIRECT
       - REJECT
 
+# Rules
 rules:
   - IP-CIDR,198.18.0.1/16,REJECT,no-resolve
   - RULE-SET,Block,IKLAN
@@ -112,52 +112,44 @@ rules:
   - RULE-SET,PortGame,GAME
   - MATCH,MIX-X
 
+# Rule Providers
 rule-providers:
   Game:
     type: file
     behavior: classical
-    path: ./game.yaml
-
+    path: ./game.yaml 
   PortGame:
     type: file
     behavior: classical
     path: ./portgame.yaml
-
   Umum:
     type: file
     behavior: classical
-    path: ./umum.yaml
-
+    path: ./umum.yaml 
   indo:
     type: file
     behavior: classical
     path: ./indo.yaml
-
   Sosmed:
     type: file
     behavior: classical
     path: ./sosmed.yaml
-
   Streaming:
     type: file
     behavior: classical
     path: ./streaming.yaml
-
   Bankid:
     type: file
     behavior: domain
     path: ./bankid.yaml
-
   Tiktok:
     type: file
     behavior: domain
     path: ./tiktok.yaml
-
   Meta:
     type: file
     behavior: domain
     path: ./meta.yaml
-
   Block:
     type: file
     behavior: domain
