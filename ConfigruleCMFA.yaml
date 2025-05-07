@@ -80,8 +80,6 @@ proxy-groups:
 
   - name: MIX-X
     type: select
-    url: http://www.gstatic.com/generate_204
-    interval: 300
     proxies:
       - Biznetexp19
       - SGGSEXP29
