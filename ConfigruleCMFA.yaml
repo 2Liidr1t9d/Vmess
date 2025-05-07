@@ -77,9 +77,7 @@ proxy-groups:
       - SGGSEXP29
 
   - name: MIX-X
-    type: fallback
-    url: http://www.gstatic.com/generate_204
-    interval: 300
+    type: select  # Mengubah tipe dari fallback ke select
     proxies:
       - Biznetexp19
       - SGGSEXP29
