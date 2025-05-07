@@ -79,10 +79,7 @@ proxy-groups:
       - SGGSEXP29
 
   - name: MIX-X
-    type: url-test
-    url: http://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 50
+    type: select
     proxies:
       - Biznetexp19
       - SGGSEXP29
@@ -94,10 +91,7 @@ proxy-groups:
       - REJECT
 
   - name: GAME
-    type: url-test
-    url: http://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 50
+    type: select
     proxies:
       - Biznetexp19
       - SGGSEXP29
