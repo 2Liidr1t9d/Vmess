@@ -11,8 +11,10 @@ external-controller: 0.0.0.0:9090
 secret: ""
 bind-address: "*"
 unified-delay: true
+
 profile:
   store-selected: true
+
 dns:
   enable: true
   ipv6: false
@@ -31,6 +33,7 @@ dns:
     - 8.8.8.8
     - 1.1.1.1
     - 112.215.203.254
+
 proxies:
   - name: Biznetexp19
     server: 104.17.3.81
@@ -48,6 +51,7 @@ proxies:
       headers:
         Host: biznet-2.storevpn.cc
     udp: true
+
   - name: SGGSEXP29
     server: 104.17.3.81
     port: 443
@@ -73,6 +77,7 @@ proxy-groups:
     proxies:
       - Biznetexp19
       - SGGSEXP29
+
   - name: MIX-X
     type: fallback
     url: http://www.gstatic.com/generate_204
@@ -80,72 +85,81 @@ proxy-groups:
     proxies:
       - Biznetexp19
       - SGGSEXP29
+
   - name: IKLAN
     type: select
     proxies:
-     - MIX-X
-     - REJECT
+      - MIX-X
+      - REJECT
 
   - name: GAME
     type: select
     proxies:
-     - ID-X
-     - DIRECT
-     - REJECT
+      - ID-X
+      - DIRECT
+      - REJECT
 
 rules:
- - IP-CIDR,198.18.0.1/16,REJECT,no-resolve
- - RULE-SET,Block,IKLAN
- - RULE-SET,Game,GAME
- - RULE-SET,Umum,MIX-X
- - RULE-SET,indo,ID-X
- - RULE-SET,Sosmed,MIX-X
- - RULE-SET,Streaming,MIX-X
- - RULE-SET,Bankid,ID-X
- - RULE-SET,Tiktok,MIX-X
- - RULE-SET,Meta,MIX-X
- - RULE-SET,PortGame,GAME
- - MATCH,MIX-X
-
+  - IP-CIDR,198.18.0.1/16,REJECT,no-resolve
+  - RULE-SET,Block,IKLAN
+  - RULE-SET,Game,GAME
+  - RULE-SET,Umum,MIX-X
+  - RULE-SET,indo,ID-X
+  - RULE-SET,Sosmed,MIX-X
+  - RULE-SET,Streaming,MIX-X
+  - RULE-SET,Bankid,ID-X
+  - RULE-SET,Tiktok,MIX-X
+  - RULE-SET,Meta,MIX-X
+  - RULE-SET,PortGame,GAME
+  - MATCH,MIX-X
 
 rule-providers:
   Game:
     type: file
     behavior: classical
-    path: ./game.yaml 
+    path: ./game.yaml
+
   PortGame:
     type: file
     behavior: classical
     path: ./portgame.yaml
+
   Umum:
     type: file
     behavior: classical
-    path: ./umum.yaml 
+    path: ./umum.yaml
+
   indo:
     type: file
     behavior: classical
     path: ./indo.yaml
+
   Sosmed:
     type: file
     behavior: classical
     path: ./sosmed.yaml
+
   Streaming:
     type: file
     behavior: classical
     path: ./streaming.yaml
+
   Bankid:
     type: file
     behavior: domain
     path: ./bankid.yaml
+
   Tiktok:
     type: file
     behavior: domain
     path: ./tiktok.yaml
+
   Meta:
     type: file
     behavior: domain
     path: ./meta.yaml
+
   Block:
     type: file
     behavior: domain
-    path: ./block.yaml  
+    path: ./block.yaml
