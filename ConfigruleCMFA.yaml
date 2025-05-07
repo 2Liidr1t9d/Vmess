@@ -48,7 +48,7 @@ proxies:
       headers:
         Host: biznet-2.storevpn.cc
     udp: true
- - name:  SGGSEXP29
+  - name: SGGSEXP29
     server: 104.17.3.81
     port: 443
     type: vmess
@@ -64,6 +64,7 @@ proxies:
       headers:
         Host: sggs-1.storevpn.cc
     udp: true
+
 proxy-groups:
   - name: ID-X
     type: fallback
